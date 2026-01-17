@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: FitTrack Integration Service
+
+server:
+  port: 8081
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+routee:
+  app-id: ${ROUTEE_APP_ID:dummy-app-id}
+  app-secret: ${ROUTEE_APP_SECRET:dummy-app-secret}
+  sender: FITTRACK
+
+open-meteo:
+  base-url: https://api.open-meteo.com/v1/forecast
+  geocoding-url: https://geocoding-api.open-meteo.com/v1/search
+  timezone: "Europe/Athens" # or UTC
+

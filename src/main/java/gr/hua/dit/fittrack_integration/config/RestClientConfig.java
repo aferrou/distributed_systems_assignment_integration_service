@@ -1,0 +1,33 @@
+package gr.hua.dit.fittrack_integration.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
+
+/**
+ * REST API client configuration.
+ */
+@Configuration
+public class RestClientConfig {
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
+    @Bean
+    public WebClient openMeteoWebClient(OpenMeteoProperties props, WebClient.Builder builder) {
+        return builder
+                .baseUrl(props.getBaseUrl())
+                .build();
+    }
+
+    @Bean
+    public WebClient geocodingWebClient(OpenMeteoProperties props, WebClient.Builder builder) {
+        return builder
+                .baseUrl(props.getGeocodingUrl())
+                .build();
+    }
+
+}
