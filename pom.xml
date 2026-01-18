@@ -12,7 +12,7 @@
 	<artifactId>fittrack-integration</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>FitTrack Integration Service</name>
-	<description>Weather API and email/SMS notification service</description>
+	<description>Weather API service</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
